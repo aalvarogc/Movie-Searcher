@@ -25,7 +25,7 @@ var pagina = 1;
 var httpRequest = new XMLHttpRequest();
 
 function lanzaPrimeraPeticionPeliculas(){
-    httpRequest.open("GET", "http://www.omdbapi.com/?apikey=b8d85a5&page="+pagina+"&s="+document.getElementById("artistName").value);
+    httpRequest.open("GET", "https://www.omdbapi.com/?apikey=b8d85a5&page="+pagina+"&s="+document.getElementById("artistName").value);
     httpRequest.onreadystatechange = tratarPrimerasPeliculas;
     httpRequest.send();
     pagina++;
@@ -72,7 +72,7 @@ function tratarPrimerasPeliculas(){
 }
 
 function lanzaPeticionPeliculas(){
-    httpRequest.open("GET", "http://www.omdbapi.com/?apikey=b8d85a5&page="+pagina+"&s="+document.getElementById("artistName").value);
+    httpRequest.open("GET", "https://www.omdbapi.com/?apikey=b8d85a5&page="+pagina+"&s="+document.getElementById("artistName").value);
     httpRequest.onreadystatechange = tratarPeliculas;
     httpRequest.send();
     pagina++;
@@ -114,7 +114,7 @@ function tratarPeliculas(){
 }
 
 function lanzaPeticionInformacionPelicula(e){
-    httpRequest.open("GET", "http://www.omdbapi.com/?apikey=b8d85a5&i="+e.imdbID);
+    httpRequest.open("GET", "https://www.omdbapi.com/?apikey=b8d85a5&i="+e.imdbID);
     httpRequest.onreadystatechange = tratarInformacionPelicula;
     httpRequest.send();
     pagina++;
